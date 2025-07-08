@@ -6,6 +6,8 @@ import requests, re, time
 from bs4 import BeautifulSoup
 import re
 
+#jeje
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
