@@ -5,6 +5,7 @@ from fastapi.templating import Jinja2Templates
 import requests, re, time
 from bs4 import BeautifulSoup
 import re
+import os  
 
 #jeje
 
@@ -90,3 +91,8 @@ async def home(request: Request, url: str = ""):
         else:
             result = response
     return templates.TemplateResponse("index.html", {"request": request, "result": result, "error": error})
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
