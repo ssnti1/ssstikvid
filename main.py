@@ -14,7 +14,9 @@ templates = Jinja2Templates(directory="templates")
 
 PRUEBA_URL = "https://ssstik.io"
 PRUEBA_API = f"{PRUEBA_URL}/abc"
-TIKTOK_URL_REGEX = re.compile(r'https://(vm\.tiktok\.com/[\w-]+|www\.tiktok\.com/@[\w.-]+/(photo|video)/\d+)')
+TIKTOK_URL_REGEX = re.compile(
+    r'https://(vt\.tiktok\.com/[\w-]+|vm\.tiktok\.com/[\w-]+|www\.tiktok\.com/@[\w.-]+/(photo|video)/\d+)'
+)
 
 
 def fetch_token():
