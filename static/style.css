@@ -92,25 +92,32 @@ button {
 
 
 
-    .navbar-custom {
-      background-color: transparent;
+ .navbar-custom {
+  background-color: transparent;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4); 
-    }
-    .navbar-custom .nav-link,
-    .navbar-custom .navbar-brand {
-      color: white;
-    }
-    .navbar-custom .nav-link.active {
-      font-weight: bold;
-    }
-    .navbar-custom .icon-link i {
-      color: rgb(0, 204, 255);
-      font-size: 2.2rem;
-    }
-    .navbar-custom .icon-link i:hover {
-      color: #fdfeff; 
-    }
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: white;
+}
+
+.navbar-custom .nav-link.active {
+  font-weight: bold;
+}
+
+.navbar-custom .icon-link i {
+  color: rgb(0, 204, 255);
+  font-size: 2.2rem;
+}
+
+
+
+.navbar-custom .icon-link i:hover {
+  color: #fdfeff;
+}
 
 footer {
   font-family: 'Archivo', sans-serif;
@@ -129,6 +136,10 @@ footer {
   input[type="text"] {
     width: 90%;
     font-size: 16px;
+  }
+
+  .navbar-toggler{
+   width: 60px;
   }
 
   button {
