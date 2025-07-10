@@ -8,103 +8,85 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-</style>
-  
 </head>
 <body>
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid" style="padding: 0px 50px;">
-      
-      <img style="width: 60px; height: 60px; " src="https://cdn.discordapp.com/attachments/1391970046947098706/1392002119015338075/icon.png?ex=686df27f&is=686ca0ff&hm=b134f46dcd59431ea3e80a015191fe097429923d9f0b37ecdb850c78ece25701&" alt="">
+      <img style="width: 60px; height: 60px;" src="https://cdn.discordapp.com/attachments/1391970046947098706/1392002119015338075/icon.png?ex=686df27f&is=686ca0ff&hm=b134f46dcd59431ea3e80a015191fe097429923d9f0b37ecdb850c78ece25701&" alt="">
       <a class="navbar-brand" href="#">
-        <strong style="background-color: transparent; font-size: 27px;  border-radius: 5px; color: #ffffff;">SSSTikVid</strong>
+        <strong style="background-color: transparent; font-size: 27px; border-radius: 5px; color: #ffffff;">SSSTikVid</strong>
       </a>
-<ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-center gap-3 w-100">
-  <li class="nav-item">
-    <a class="nav-link" style="font-size: 22px;" href="#">Instagram</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" style="font-size: 22px;" href="#">About me</a>
-  </li>
-</ul>
-
-      <div class="d-flex align-items-center gap-3">
-        <a href="https://x.com/persaqe" target="_blank" title="X">
-  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 1200 1227" fill="white">
-    <path d="M1035 0H1200L741 549L1200 1227H837L537 813L189 1227H0L483 648L45 0H426L705 375L1035 0ZM969 1113H1062L327 108H231L969 1113Z"/>
-  </svg>
-</a>
-
-        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-center gap-3 w-100">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 22px;" href="#">Instagram</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 22px;" href="#">About me</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 ms-auto">
+          <a href="https://x.com/persaqe" target="_blank" title="X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 1200 1227" fill="white">
+              <path d="M1035 0H1200L741 549L1200 1227H837L537 813L189 1227H0L483 648L45 0H426L705 375L1035 0ZM969 1113H1062L327 108H231L969 1113Z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 </header>
 
- <div class="info2" style="padding: 40px 0px;">
-    <h1 style="padding-bottom: 10px;">Descarga vídeos de TikTok</h1>
-    <form method="get">
-      <input type="text" name="url" placeholder="Pega tu enlace de TikTok" required>
-      <button type="submit">Descargar</button>
-    </form>
+<div class="info2" style="padding: 40px 0px;">
+  <h1 style="padding-bottom: 10px;">Descarga vídeos de TikTok</h1>
+  <form method="get">
+    <input type="text" name="url" placeholder="Pega tu enlace de TikTok" required>
+    <button type="submit">Descargar</button>
+  </form>
+</div>
+
+<div class="container" style="max-width: 100%;">
+  {% if error %}
+    <p style="color: red;">{{ error }}</p>
+  {% endif %}
+
+  {% if result %}
+    <div class="info">
+      <img src="{{ result.avatar }}" alt="avatar" width="100" style="border-radius: 50%;">
+      <h3>@{{ result.nickname }}</h3>
+      <p>{{ result.desc }}</p>
+      {% if result.video %}
+        <br><a class="volver" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
+      {% elif result.images %}
+        <h4>Descargar Fotos:</h4>
+        <ul>
+          {% for img in result.images %}
+            <li><a href="{{ img }}" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <p><a class="volver" href="{{ result.music }}">🎵 Descargar Música</a></p>
+      <a class="volver" href="/">🔙 Volver</a>
     </div>
+    <br>
+  {% endif %}
+</div>
 
-
-
-  <div class="container" style="
-  max-width: 100%;">
-
- 
-
-    {% if error %}
-      <p style="color: red;">{{ error }}</p>
-    {% endif %}
-
-{% if result %}
-  <div class="info">
-    <img src="{{ result.avatar }}" alt="avatar" width="100" style="border-radius: 50%;">
-
-    <h3>@{{ result.nickname }}</h3>
-    <p>{{ result.desc }}</p>
-    {% if result.video %}
-      <br><a class="volver" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
-    {% elif result.images %}
-      <h4>Descargar Fotos:</h4>
-      <ul>
-        {% for img in result.images %}
-          <li><a href="{{ img }}" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-    <p><a class="volver" href="{{ result.music }}">🎵 Descargar Música</a></p>
-    <a class="volver" href="/">
-  🔙 Volver
-</a>
+<div class="info3" style="text-align: start;">
+  <div class="info-ssstikvid">
+    <h2>¿Cómo obtener tus videos de TikTok sin marca de agua en segundos?</h2><br>
+    <p><b>Encuentra tu video deseado</b></p>
+    <p>Abre la aplicación de TikTok y navega hasta el video que deseas descargar. Asegúrate de que sea el video correcto reproduciéndolo antes de continuar.</p>
+    <p><b>Copia el enlace del video</b></p>
+    <p>Toca el botón de compartir (ícono de flecha) en el lado derecho de la pantalla y selecciona copiar enlace. Verifica que el enlace se haya guardado correctamente en tu portapapeles.</p>
+    <p><b>Elige y descarga: video o audio</b></p>
+    <p>Abre <b>SSSTikVid</b> en tu navegador, pega el enlace en el cuadro de texto y haz clic en descargar. Luego podrás seleccionar entre descargar el video sin marca de agua o descargar únicamente el audio de este.</p>
   </div>
-  <br>
-{% endif %}
-  </div>
-
-  <div class="info3" style="text-align: start;">
-    
-    <div class="info-ssstikvid">
-      <h2>¿Cómo obtener tus videos de TikTok sin marca de agua en segundos?</h2><br>
-        <p><b>Encuentra tu video deseado</b></p>
-        <p>Abre la aplicación de TikTok y navega hasta el video que deseas descargar. Asegúrate de que sea el video correcto reproduciéndolo antes de continuar.</p>
-
-        <p><b>Copia el enlace del video</b></p>
-        <p>Toca el botón de compartir (ícono de flecha) en el lado derecho de la pantalla y selecciona copiar enlace. Verifica que el enlace se haya guardado correctamente en tu portapapeles.</p>
-
-        <p><b>Elige y descarga: video o audio</b></p>
-        <p>Abre <b>SSSTikVid</b> en tu navegador, pega el enlace en el cuadro de texto y haz clic en descargar. Luego podrás seleccionar entre descargar el video sin marca de agua o descargar únicamente el audio de este.</p>
-
-    </div>
-    
 </div>
 
 <footer class="text-white text-center py-4">
@@ -114,9 +96,8 @@
   </div>
 </footer>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </body>
 </html>

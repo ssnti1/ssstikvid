@@ -7,8 +7,6 @@ from bs4 import BeautifulSoup
 import re
 import os  
 
-#jeje
-
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
