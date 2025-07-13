@@ -52,7 +52,7 @@
 
 </header>
 
- <div class="info2" style="padding: 40px 0px;">
+ <div class="info2" style="padding: 30px 0px;">
     <h1 style="padding-bottom: 10px;">Descarga vídeos de TikTok</h1>
     <form method="get">
       <input type="text" name="url" placeholder="Pega tu enlace de TikTok" required>
@@ -71,31 +71,61 @@
       <p style="color: red;">{{ error }}</p>
     {% endif %}
 
+
+<div>
 {% if result %}
-  <div class="info">
-    <img src="{{ result.avatar }}" alt="avatar" width="100" style="border-radius: 50%;">
 
-    <h3>@{{ result.nickname }}</h3>
-    <p>{{ result.desc }}</p>
-    {% if result.video %}
-      <br><a class="volver" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
-    {% elif result.images %}
-      <h4>Descargar Fotos:</h4>
-      <ul style="padding: 0px; margin: 0;">
-        {% for img in result.images %}
-          <li style="list-style: none;"><a href="{{ img }}" class="volver" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center py-4">
 
-    <a class="volver" href="{{ result.music }}">🎵 Descargar Audio</a>
-    <a class="volver" href="/">
-  🔙 Volver
-</a>
+    <!-- VIDEO / FOTOS -->
+    <div class="text-center" style="flex: 1; max-width: 400px;">
+      {% if result.video %}
+        <div class="mb-3">
+          <video controls style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <source src="{{ result.video }}" type="video/mp4">
+            Tu navegador no soporta videos.
+          </video>
+        </div>
+      {% elif result.images %}
+        <h4 class="mt-4">Descargar Fotos:</h4>
+        <div class="row justify-content-center">
+          {% for img in result.images %}
+            <div class="col-6 col-md-4 col-lg-3 mb-3">
+              <img src="{{ img }}" alt="Foto {{ loop.index }}" class="img-fluid rounded shadow-sm mb-2">
+              <a href="{{ img }}" class="volver d-block" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- PERFIL + BOTONES -->
+    <div class="container-media text-center" style="flex: 1; max-width: 400px;">
+<div class="author d-flex align-items-start gap-3 mb-3">
+  <img class="avatar" src="{{ result.avatar }}" alt="avatar" loading="lazy" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+  <div class="userinfo text-start">
+    <div class="username fw-bold  fs-5" style="color: #000000dd;">@{{ result.nickname }}</div>
+    <div class="desc ellipsis-1" style="color: #000000bd; font-size: 15px;">{{ result.desc }}...</div>
   </div>
-  <br>
+</div>
+
+
+  {% if result.video %}
+    <a class="volver mt-2 mx-auto d-block" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
+  {% endif %}
+  {% if result.music %}
+    <a class="volver mt-2 mx-auto d-block" href="{{ result.music }}">🎵 Descargar Audio</a>
+  {% endif %}
+  <a class="volver mt-2 mx-auto d-block" href="/">🔙 Volver</a>
+
+    </div>
+
+  </div>
+
 {% endif %}
-  </div>
+</div>
+
+
 
   <div class="info3" style="text-align: start;">
     

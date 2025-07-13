@@ -2,9 +2,8 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import requests, re, time
+import requests, re, os
 from bs4 import BeautifulSoup
-import os
 
 app = FastAPI()
 
@@ -45,7 +44,7 @@ def prueba_scrape(url: str):
     if not match:
         return {"error": "URL inválida"}
 
-    usuario = match.group(2)  # el @username
+    usuario = match.group(2)
 
     token = fetch_token()
     if not token:
@@ -75,7 +74,6 @@ def prueba_scrape(url: str):
         images = [a["href"] for a in soup.select("ul.splide__list > li a")]
         video = soup.select_one("a.without_watermark")["href"] if soup.select_one("a.without_watermark") else ""
 
-        # Intentar avatar HD si tenemos usuario
         if usuario:
             avatar_hd = obtener_avatar_hd(usuario)
             if avatar_hd:

@@ -16,6 +16,7 @@ body {
 }
 
 
+
 form {
   margin-bottom: 20px;
 }
@@ -44,6 +45,17 @@ button {
   flex-direction: column;
   height: 100%;
   margin: auto;
+}
+
+.author {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+.username {
+  font-size: 1.2rem;
+  color: #1d1d1d;
 }
 
 
