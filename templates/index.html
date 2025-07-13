@@ -20,9 +20,9 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid px-4">
     <!-- Logo y nombre -->
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
       <img src="https://pbs.twimg.com/media/GveS7ZQWMAETLSp?format=png&name=small" 
-           alt="logo" style="width: 50px; height: 50px;">
+           alt="logo" style="width: 45px; height: 45px;">
       <strong style="font-size: 25px; color: white;">SSSTikVid</strong>
     </a>
 
@@ -37,9 +37,6 @@
       <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-3 text-center">
         <li class="nav-item">
           <a class="nav-link" style="font-size: 20px;" href="#">Instagram</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: 20px;" href="#">About me</a>
         </li>
         <li class="nav-item">
           <a class="nav-link px-2" href="https://x.com/persaqe" target="_blank" title="X">
@@ -84,9 +81,9 @@
       <br><a class="volver" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
     {% elif result.images %}
       <h4>Descargar Fotos:</h4>
-      <ul>
+      <ul style="padding: 0px; margin: 0;">
         {% for img in result.images %}
-          <li><a href="{{ img }}" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a></li>
+          <li style="list-style: none;"><a href="{{ img }}" class="volver" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}
@@ -102,24 +99,40 @@
 
   <div class="info3" style="text-align: start;">
     
-    <div class="info-ssstikvid">
-      <h1>¿Cómo obtener tus videos de TikTok sin marca de agua en segundos?</h1><br>
-        <h4><b>Encuentra tu video deseado</b></h4>
-        <p>Abre la aplicación de TikTok y navega hasta el video que deseas descargar. Asegúrate de que sea el video correcto reproduciéndolo antes de continuar.</p>
+<section class="container py-4 bg-white" style="box-shadow: none;">
+  <h2 class="h4 fw-bold text-dark mb-4">¿Cómo obtener tus videos de TikTok sin marca de agua en segundos?</h2>
+  <ol class="list-unstyled">
+    
+    <li class="d-flex mb-3">
+      <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle" style="width: 32px; height: 32px; color: #ff6a88">1</div>
+      <p class="mb-0 ms-3">
+        <strong>Encuentra tu video deseado:</strong> Abre la aplicación de TikTok y navega hasta el video que deseas descargar. Asegúrate de que sea el video correcto reproduciéndolo antes de continuar.
+      </p>
+    </li>
+    
+    <li class="d-flex mb-3">
+      <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle" style="width: 32px; height: 32px; color: #ff6a88">2</div>
+      <p class="mb-0 ms-3">
+        <strong>Copia el enlace del video:</strong> Toca el botón de compartir (ícono de flecha) en el lado derecho de la pantalla y selecciona <em>copiar enlace</em>. Verifica que el enlace se haya guardado correctamente en tu portapapeles.
+      </p>
+    </li>
 
-        <h4><b>Copia el enlace del video</b></h4>
-        <p>Toca el botón de compartir (ícono de flecha) en el lado derecho de la pantalla y selecciona copiar enlace. Verifica que el enlace se haya guardado correctamente en tu portapapeles.</p>
+    <li class="d-flex mb-3">
+      <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle" style="width: 32px; height: 32px; color: #ff6a88">3</div>
+      <p class="mb-0 ms-3">
+        <strong>Elige y descarga:</strong> Abre <strong>SSSTikVid</strong> en tu navegador, pega el enlace en el cuadro de texto y haz clic en descargar. Luego podrás seleccionar entre descargar el video sin marca de agua o únicamente el audio.
+      </p>
+    </li>
 
-        <h4><b>Elige y descarga: video o audio</b></h4>
-        <p>Abre <b>SSSTikVid</b> en tu navegador, pega el enlace en el cuadro de texto y haz clic en descargar. Luego podrás seleccionar entre descargar el video sin marca de agua o descargar únicamente el audio de este.</p>
+  </ol>
+</section>
 
-    </div>
     
 </div>
 
-<footer class="text-white text-center py-4">
+<footer class="text-white text-center py-3">
   <div class="container" style="background-color: transparent; box-shadow: none;">
-    <p class="mb-1">Copyright © 2025 SSSTikVid. <br> No estamos afiliados a TikTok.</p>
+    <p class="mb-1" style="font-size: 18px;">Copyright © 2025 SSSTikVid. <br> No estamos afiliados a TikTok.</p>
     <small>Powered by <a href="https://x.com/persaqe" target="_blank" class="text-decoration-none text-dark doria">doria</a> & <a href="https://x.com/killerjhsk" target="_blank" class="text-decoration-none text-dark anggie">Anggie</a></small>
   </div>
 </footer>
