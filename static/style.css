@@ -8,13 +8,30 @@ body {
 }
 
 .container {
-  padding: 50px;
+  padding: 0px 50px;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
 }
 
+
+.ssst-info {
+  background-color: #f7f8fa;
+  color: #333;
+}
+
+.ssst-info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8d3dae;
+}
+
+.ssst-info p.lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
 
 
 form {
@@ -71,7 +88,7 @@ button {
 }
 
 .info3 {
-  padding: 50px 150px;
+  padding: 100px 0px 150px 0px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -87,6 +104,19 @@ button {
 .info img {
   margin-top: 10px;
 }
+
+  .volver2 {
+    width: 80%;
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+  }
 
 .volver {
   display: inline-block;
@@ -167,6 +197,7 @@ footer {
     width: 90%;
   }
 
+
   .info3 {
     padding: 20px;
   }
@@ -191,6 +222,10 @@ footer {
 @media screen and (max-width: 425px) {
   .info2 h1 {
     font-size: 24px;
+  }
+
+  .author {
+    padding: 0px 10px !important;
   }
 
   .info3 h2 {

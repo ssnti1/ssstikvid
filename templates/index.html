@@ -59,12 +59,6 @@
       <button type="submit">Descargar</button>
     </form>
     </div>
-
-
-
-  <div class="container" style="
-  max-width: 100%;">
-
  
 
     {% if error %}
@@ -80,8 +74,8 @@
     <!-- VIDEO / FOTOS -->
     <div class="text-center" style="flex: 1; max-width: 400px;">
       {% if result.video %}
-        <div class="mb-3">
-          <video controls style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <div>
+          <video controls preload="metadata" style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             <source src="{{ result.video }}" type="video/mp4">
             Tu navegador no soporta videos.
           </video>
@@ -90,9 +84,9 @@
         <h4 class="mt-4">Descargar Fotos:</h4>
         <div class="row justify-content-center">
           {% for img in result.images %}
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <img src="{{ img }}" alt="Foto {{ loop.index }}" class="img-fluid rounded shadow-sm mb-2">
-              <a href="{{ img }}" class="volver d-block" download="foto_tiktok_{{ loop.index }}.jpg">📷 Foto {{ loop.index }}</a>
+            <div class="col-6 col-md-4 col-lg-4 mb-3">
+              <img src="{{ img }}" alt="Foto {{ loop.index }}" class="img-fluid rounded shadow-sm mb-2" style="height: 70%;">
+              <a href="{{ img }}" class="volver2 mx-auto d-block fw-bold" download="foto_tiktok_{{ loop.index }}.jpg">📷 {{ loop.index }}</a>
             </div>
           {% endfor %}
         </div>
@@ -101,22 +95,22 @@
 
     <!-- PERFIL + BOTONES -->
     <div class="container-media text-center" style="flex: 1; max-width: 400px;">
-<div class="author d-flex align-items-start gap-3 mb-3">
+<div class="author d-flex align-items-start gap-1 mb-2" style="padding: 0px 20px;">
   <img class="avatar" src="{{ result.avatar }}" alt="avatar" loading="lazy" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
   <div class="userinfo text-start">
-    <div class="username fw-bold  fs-5" style="color: #000000dd;">@{{ result.nickname }}</div>
-    <div class="desc ellipsis-1" style="color: #000000bd; font-size: 15px;">{{ result.desc }}...</div>
+    <div class="username fw-bold  fs-5" style="color: #121212dd;">@{{ result.nickname }}</div>
+    <div class="desc ellipsis-1 fw-bold" style="color: #141414bd; font-size: 15px;">{{ result.desc }}...</div>
   </div>
 </div>
 
 
   {% if result.video %}
-    <a class="volver mt-2 mx-auto d-block" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
+    <a class="volver mt-2 mx-auto d-block fw-bold" href="{{ result.video }}" download="video_tiktok.mp4">🎬 Descargar Video</a>
   {% endif %}
   {% if result.music %}
-    <a class="volver mt-2 mx-auto d-block" href="{{ result.music }}">🎵 Descargar Audio</a>
+    <a class="volver mt-2 mx-auto d-block fw-bold" href="{{ result.music }}">🎵 Descargar MP3</a>
   {% endif %}
-  <a class="volver mt-2 mx-auto d-block" href="/">🔙 Volver</a>
+  <a class="volver mt-2 mx-auto d-block fw-bold" href="/">🔙 Volver</a>
 
     </div>
 
@@ -126,11 +120,9 @@
 </div>
 
 
-
-  <div class="info3" style="text-align: start;">
-    
-<section class="container py-4 bg-white" style="box-shadow: none;">
-  <h2 class="h4 fw-bold text-dark mb-4">¿Cómo obtener tus videos de TikTok sin marca de agua en segundos?</h2>
+<div class="info3" style="text-align: start;">
+<section class="container bg-white" style="box-shadow: none; ">
+  <h2 class=" fw-bold degradado-titulo text-dark mb-4">¿Cómo descargar tus videos de TikTok sin marca de agua?</h2>
   <ol class="list-unstyled">
     
     <li class="d-flex mb-3">
@@ -157,11 +149,18 @@
   </ol>
 </section>
 
-    
+<section class="container bg-white mt-4" style="box-shadow: none; ">
+  <h2 class="mb-3">¿Qué es SSSTikVid?</h2>
+  <p class="mb-0 ms-3">
+    <strong>SSSTikVid</strong> es una herramienta rápida y sencilla para descargar videos de <strong>TikTok</strong> sin marca de agua. Compatible con calidad HD y disponible en todos los dispositivos: <strong>Android</strong>, <strong></strong>iOS</strong>, <strong>PC</strong> o <strong>Mac</strong>. Sin complicaciones ni registros, solo pega el enlace y descarga tu video o fotos al instante.
+  </p>
+
+</section>
+  
 </div>
 
 <footer class="text-white text-center py-3">
-  <div class="container" style="background-color: transparent; box-shadow: none;">
+  <div class="container" style="background-color: transparent; box-shadow: none; ">
     <p class="mb-1" style="font-size: 18px;">Copyright © 2025 SSSTikVid. <br> No estamos afiliados a TikTok.</p>
     <small>Powered by <a href="https://x.com/persaqe" target="_blank" class="text-decoration-none text-dark doria">doria</a> & <a href="https://x.com/killerjhsk" target="_blank" class="text-decoration-none text-dark anggie">Anggie</a></small>
   </div>
