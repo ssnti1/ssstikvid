@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from fastapi import Response
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -15,6 +16,15 @@ PRUEBA_API = f"{PRUEBA_URL}/abc"
 TIKTOK_URL_REGEX = re.compile(
     r'https://(vt\.tiktok\.com/[\w-]+|vm\.tiktok\.com/[\w-]+|www\.tiktok\.com/@([\w.-]+)/(photo|video)/\d+)'
 )
+
+def proxy_poster(url: str):
+    try:
+        r = requests.get(url, timeout=10)
+        if r.status_code == 200 and "image" in r.headers.get("Content-Type", ""):
+            return Response(content=r.content, media_type=r.headers["Content-Type"])
+    except:
+        pass
+    return Response(status_code=404)
 
 def fetch_token():
     try:
