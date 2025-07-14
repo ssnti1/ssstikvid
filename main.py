@@ -42,7 +42,7 @@ def obtener_avatar_hd(usuario: str):
 def prueba_scrape(url: str):
     match = TIKTOK_URL_REGEX.match(url)
     if not match:
-        return {"error": "URL inválida"}
+        return {"error": "Enlace inválido"}
 
     usuario = match.group(2)
 

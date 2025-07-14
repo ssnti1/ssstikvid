@@ -75,7 +75,7 @@
     <div class="text-center" style="flex: 1; max-width: 400px; padding: 0px 10px 0px 10px">
       {% if result.video %}
         <div>
-          <video controls poster="{{ thumbnai_ur}}" preload="metadata" style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+          <video controls poster="{{ thumbnai_ur}}" preload="metadata" playsinline style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             <source src="{{ result.video }}" type="video/mp4">
             Tu navegador no soporta videos.
           </video>
