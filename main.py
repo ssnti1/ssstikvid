@@ -1,12 +1,9 @@
 from fastapi import FastAPI, Request
-from fastapi import Response
-from fastapi.responses import StreamingResponse
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import requests, re, os
 from bs4 import BeautifulSoup
-from io import BytesIO
 
 app = FastAPI()
 
@@ -18,22 +15,6 @@ PRUEBA_API = f"{PRUEBA_URL}/abc"
 TIKTOK_URL_REGEX = re.compile(
     r'https://(vt\.tiktok\.com/[\w-]+|vm\.tiktok\.com/[\w-]+|www\.tiktok\.com/@([\w.-]+)/(photo|video)/\d+)'
 )
-
-@app.get("/poster-proxy")
-def proxy_poster(url: str):
-    try:
-        headers = {
-            "User-Agent": "Mozilla/5.0"
-        }
-        r = requests.get(url, headers=headers, timeout=10, allow_redirects=True)
-
-        if r.status_code == 200 and "image" in r.headers.get("Content-Type", ""):
-            return StreamingResponse(BytesIO(r.content), media_type=r.headers["Content-Type"])
-
-    except Exception as e:
-        print("Error al cargar miniatura:", e)
-
-    return Response(status_code=404)
 
 def fetch_token():
     try:
