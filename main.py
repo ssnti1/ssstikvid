@@ -45,7 +45,6 @@ def prueba_scrape(url: str):
         return {"error": "Enlace inválido"}
 
     usuario = match.group(2)
-
     token = fetch_token()
     if not token:
         return {"error": "No se pudo obtener token"}
@@ -79,6 +78,13 @@ def prueba_scrape(url: str):
             if avatar_hd:
                 avatar = avatar_hd
 
+        # Validaciones clave para evitar contenido vacío
+        if not video and not images:
+            return {"error": "¡Estás descargando demasiado rápido! Por favor, espera unos 10 segundos :)"}
+
+        if not nickname or not avatar:
+            return {"error": "No se pudo obtener información del perfil"}
+
         return {
             "desc": desc,
             "avatar": avatar,
@@ -88,8 +94,8 @@ def prueba_scrape(url: str):
             "video": video
         }
 
-    except:
-        return {"error": "Falló la descarga"}
+    except Exception as e:
+        return {"error": f"Falló la descarga: {str(e)}"}
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request, url: str = ""):
