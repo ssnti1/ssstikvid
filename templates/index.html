@@ -62,7 +62,7 @@
  
 
     {% if error %}
-      <p style="color: red;">{{ error }}</p>
+      <p style="color: rgb(0, 0, 0);">{{ error }}</p>
     {% endif %}
 
 
@@ -75,7 +75,7 @@
     <div class="text-center" style="flex: 1; max-width: 400px; padding: 0px 10px 0px 10px">
       {% if result.video %}
         <div>
-          <video controls preload="metadata" style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+          <video controls poster="{{ thumbnai_ur}}" preload="metadata" style="width: 50%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             <source src="{{ result.video }}" type="video/mp4">
             Tu navegador no soporta videos.
           </video>
@@ -122,7 +122,7 @@
 
 <div class="info3" style="text-align: start;">
 <section class="container bg-white" style="box-shadow: none; ">
-  <h2 class=" fw-bold degradado-titulo text-dark mb-4">¿Cómo descargar tus videos de TikTok sin marca de agua?</h2>
+  <h2 class=" fw-bold degradado-titulo text-dark mb-4">¿Cómo descargar videos de TikTok sin marca de agua?</h2>
   <ol class="list-unstyled">
     
     <li class="d-flex mb-3">
