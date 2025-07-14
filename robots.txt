@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ssstikvid.com/sitemap.xml
+Sitemap: https://www.ssstikvid.com/sitemap.xml

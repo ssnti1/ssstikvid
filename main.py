@@ -16,6 +16,24 @@ TIKTOK_URL_REGEX = re.compile(
     r'https://(vt\.tiktok\.com/[\w-]+|vm\.tiktok\.com/[\w-]+|www\.tiktok\.com/@([\w.-]+)/(photo|video)/\d+)'
 )
 
+from fastapi.responses import Response
+
+@app.get("/sitemap.xml", response_class=Response)
+async def sitemap():
+    xml_content = """
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://www.ssstikvid.com/</loc>
+        <lastmod>2025-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+      </url>
+    </urlset>
+    """
+    return Response(content=xml_content.strip(), media_type="application/xml")
+
+
 def fetch_token():
     try:
         r = requests.get(PRUEBA_URL, headers={"User-Agent": "Mozilla/5.0"})
