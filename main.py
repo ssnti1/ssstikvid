@@ -22,14 +22,28 @@ from fastapi.responses import StreamingResponse
 from fastapi import Query
 import requests
 
+from fastapi import Response
+from starlette.responses import StreamingResponse
+
 @app.get("/video_proxy")
 def video_proxy(video_url: str = Query(...)):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
-    r = requests.get(video_url, headers=headers, stream=True)
-    return StreamingResponse(r.raw, media_type="video/mp4")
 
+    r = requests.get(video_url, headers=headers, stream=True)
+
+    content_length = r.headers.get("Content-Length")
+    return StreamingResponse(
+        r.raw,
+        media_type="video/mp4",
+        headers={
+            "Content-Disposition": "inline",
+            "Content-Length": content_length or "",
+            "Accept-Ranges": "bytes",
+            "Cache-Control": "public, max-age=31536000"
+        }
+    )
 
 @app.get("/sitemap.xml", response_class=Response)
 async def sitemap():
