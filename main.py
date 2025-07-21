@@ -18,6 +18,19 @@ TIKTOK_URL_REGEX = re.compile(
 
 from fastapi.responses import Response
 
+from fastapi.responses import StreamingResponse
+from fastapi import Query
+import requests
+
+@app.get("/video_proxy")
+def video_proxy(video_url: str = Query(...)):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    r = requests.get(video_url, headers=headers, stream=True)
+    return StreamingResponse(r.raw, media_type="video/mp4")
+
+
 @app.get("/sitemap.xml", response_class=Response)
 async def sitemap():
     xml_content = """

@@ -84,7 +84,7 @@ button {
 }
 
 .info3 {
-  padding: 100px 0px 150px 0px;
+  padding: 100px 0px 100px 0px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -247,4 +247,5 @@ footer {
     width: 24px;
     height: 24px;
   }
+
 }
