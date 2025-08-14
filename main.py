@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import requests, re, os
@@ -24,6 +24,10 @@ import requests
 
 from fastapi import Response
 from starlette.responses import StreamingResponse
+
+@app.get("/sw.js")
+async def service_worker():
+    return FileResponse(os.path.join(os.path.dirname(__file__), "sw.js"), media_type="application/javascript")
 
 @app.get("/video_proxy")
 def video_proxy(video_url: str = Query(...)):
