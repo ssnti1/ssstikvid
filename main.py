@@ -25,7 +25,6 @@ import requests
 from fastapi import Response
 from starlette.responses import StreamingResponse
 
-
 @app.get("/video_proxy")
 def video_proxy(video_url: str = Query(...)):
     headers = {
