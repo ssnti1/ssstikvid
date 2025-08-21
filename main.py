@@ -43,7 +43,7 @@ def video_proxy(video_url: str = Query(...)):
             "Accept-Ranges": "bytes",
             "Cache-Control": "public, max-age=31536000"
         }
-    )
+    ) 
 
 @app.get("/sitemap.xml", response_class=Response)
 async def sitemap():
