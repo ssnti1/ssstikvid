@@ -25,9 +25,6 @@ import requests
 from fastapi import Response
 from starlette.responses import StreamingResponse
 
-@app.get("/sw.js")
-async def service_worker():
-    return FileResponse(os.path.join(os.path.dirname(__file__), "sw.js"), media_type="application/javascript")
 
 @app.get("/video_proxy")
 def video_proxy(video_url: str = Query(...)):
@@ -55,7 +52,7 @@ async def sitemap():
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://www.ssstikvid.com/</loc>
+        <loc>https://ssstikvid.com/</loc>
         <lastmod>2025-07-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
