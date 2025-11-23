@@ -1,268 +1,541 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Charset y Viewport -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030008" />
+  <meta name="robots" content="index,follow" />
 
-  <!-- SEO Principal -->
-  <title>SSSTikVid | Descargar Videos de TikTok sin Marca de Agua en HD</title>
-  <meta name="description" content="Descargar videos de TikTok sin marca de agua gratis, rápido y en HD. SSSTikVid es compatible con Android, iPhone, PC y más. ¡Sin apps ni registros!">
-  <meta name="keywords" content="descargar TikTok sin marca de agua, TikTok downloader HD, ssstikvid, sin logo TikTok, descargar TikTok gratis, bajar videos TikTok, SSSTik, SnapTik, descargar MP3 TikTok, TikTok sin marca de agua en línea">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="author" content="SSSTikVid">
-  <link rel="canonical" href="https://ssstikvid.com/">
+  <title>SSSTikVid - Descargar videos de TikTok sin marca de agua en HD</title>
+  <meta
+    name="description"
+    content="SSSTikVid es un descargador profesional de TikTok para guardar videos y audio sin marca de agua, en HD, gratis y desde cualquier dispositivo."
+  />
+  <meta
+    name="keywords"
+    content="descargar TikTok sin marca de agua, SSSTikTok, SSSTik, TikTok downloader, descargar videos TikTok, guardar TikTok MP4, TikTok MP3"
+  />
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn...) -->
-  <meta property="og:title" content="SSSTikVid - Descarga TikToks sin Marca de Agua en HD">
-  <meta property="og:description" content="Descarga videos y fotos de TikTok sin marca de agua en DH">
-  <meta property="og:image" content="https://ssstikvid.com/static/og-image.pg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://ssstikvid.com">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="SSSTikVid">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5766028005835081"
-  crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://ssstikvid.com/" />
+  <link rel="alternate" hreflang="es" href="https://ssstikvid.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SSSTikVid - Descargar TikTok sin marca de agua en HD" />
+  <meta
+    property="og:description"
+    content="Descarga videos y audio de TikTok sin marca de agua, en segundos, sin registrarte y desde cualquier dispositivo."
+  />
+  <meta property="og:image" content="https://ssstikvid.com/static/og-image.png" />
+  <meta property="og:url" content="https://ssstikvid.com/" />
+  <meta property="og:type" content="website" />
+
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SSSTikVid - TikTok Descargar videos sin Marca de Agua">
-  <meta name="twitter:description" content="Descarga TikToks sin marca de agua ni apps. Rápido, gratuito y HD.">
-  <meta name="twitter:image" content="https://ssstikvid.com/static/og-image.png">
-  <meta name="twitter:site" content="@persaqe">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SSSTikVid - TikTok Downloader sin marca de agua" />
+  <meta
+    name="twitter:description"
+    content="Guarda videos y audio de TikTok sin marca de agua, gratis y con calidad profesional."
+  />
+  <meta name="twitter:image" content="https://ssstikvid.com/static/og-image.png" />
+  <meta name="twitter:site" content="@sj0847" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="../static/og-image.png" type="image/x-icon">
-
-  <!-- Schema.org JSON-LD para Google -->
+  <!-- Schema.org: WebSite + WebApplication + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SSSTikVid",
-    "url": "https://ssstikvid.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://ssstikvid.com/?url={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "SSSTikVid",
+        "url": "https://ssstikvid.com/",
+        "description": "Descargador de TikTok para guardar videos y audio sin marca de agua, en HD y desde cualquier dispositivo.",
+        "inLanguage": "es",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ssstikvid.com/?url={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "SSSTikVid - TikTok Downloader",
+        "url": "https://ssstikvid.com/",
+        "applicationCategory": "VideoApplication",
+        "operatingSystem": "Android, iOS, Windows, macOS, Linux",
+        "description": "Aplicación web para descargar videos, fotos y audio de TikTok sin marca de agua, en HD y gratis.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo descargar videos de TikTok sin marca de agua con SSSTikVid?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copia el enlace del video desde la app o web de TikTok, pégalo en el cuadro de texto de SSSTikVid y pulsa en Descargar. La herramienta procesará el enlace y te mostrará las opciones disponibles para guardar el contenido sin marca de agua."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿SSSTikVid es gratis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, SSSTikVid es completamente gratuito. No necesitas crear una cuenta, iniciar sesión ni pagar suscripciones para descargar videos de TikTok sin marca de agua."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Funciona SSSTikVid en móvil y en ordenador?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SSSTikVid funciona desde el navegador en Android, iPhone, tablets, PC y Mac. Solo necesitas conexión a Internet y un navegador actualizado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo descargar solo el audio de un TikTok?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cuando SSSTikVid detecta la pista de audio del TikTok, te muestra una opción para descargar solo el audio. Es ideal para guardar sonidos, canciones o clips de voz en formato compatible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Es legal descargar videos de TikTok?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Debes usar SSSTikVid únicamente con contenido del que seas propietario o tengas permisos del creador original. Respeta siempre los derechos de autor y las condiciones de uso de TikTok."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
-  <!-- Precarga de fuentes para rendimiento -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/static/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  
-  <!-- Performance -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
-  <meta name="theme-color" content="#000000">
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7KZY0WV2K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W7KZY0WV2K');
-  </script>
-
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="/static/og-image.png" type="image/png" />
 </head>
 
-<body>
+<body class="app-body">
+  <!-- Efectos de fondo -->
+  <div class="bg-orbit bg-orbit--red"></div>
+  <div class="bg-orbit bg-orbit--purple"></div>
+  <div class="bg-noise"></div>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="container-fluid px-4">
-        <!-- Logo y nombre -->
-        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-          <img src="../static/og-image.png" alt="logo"
-            style="width: 45px; height: 45px;">
-          <strong style="font-size: 25px; color: white;">SSSTikVid</strong>
-        </a>
-
-        <!-- Botón para móviles -->
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-        </button>
-
-        <!-- Menú colapsable -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-3 text-center">
-            <li class="nav-item">
-              <a class="nav-link" style="font-size: 20px;" href="#">Instagram</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-2" href="https://x.com/persaqe" target="_blank" title="X">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 1200 1227" fill="white">
-                  <path
-                    d="M1035 0H1200L741 549L1200 1227H837L537 813L189 1227H0L483 648L45 0H426L705 375L1035 0ZM969 1113H1062L327 108H231L969 1113Z" />
-                </svg>
-              </a>
-            </li>
-          </ul>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a href="/" class="brand">
+        <div class="brand-mark">
+         <img src="../static/og-image.png" alt="SSSTikVid" loading="lazy" />
         </div>
-      </div>
-    </nav>
+        <div class="brand-text">
+          <span class="brand-name">SSSTIKVID</span>
+          <span class="brand-tag">TIKTOK DOWNLOADER</span>
+        </div>
+      </a>
 
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="#caracteristicas" class="nav-link">Características</a>
+        <a href="#faq" class="nav-link">Preguntas frecuentes</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="info2" style="padding: 30px 0px;">
-    <h1 class="fw-bold" style="padding-bottom: 10px;">Descarga vídeos de TikTok</h1>
-    <form method="get">
-      <input type="text" name="url" placeholder="Pega tu enlace de TikTok" required>
-      <button type="submit">Descargar</button>
-    </form>
-  </div>
+  <main class="page">
+    <!-- HERO / FORMULARIO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-layout">
+        <div class="hero-primary">
+          <h1 id="hero-title" class="hero-title">
+            Descargar TikTok sin marca de agua
+          </h1>
+          <p class="hero-subtitle">
+            Pega el enlace, pulsa descargar y guarda tus videos, fotos o sonidos en la mejor calidad posible.
+            Pensado para creadores, agencias y cualquier persona que necesite un flujo rápido y profesional.
+          </p>
+
+          <div class="hero-benefits">
+            <div class="benefit-pill">⚡ Rápido y gratuito</div>
+            <div class="benefit-pill">📱 Android, iPhone, PC y Mac</div>
+            <div class="benefit-pill">🎬 Video HD • 🎵 Audio MP3</div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Formulario de descarga">
+          <header class="panel-header">
+            <h2 class="panel-title">Pega el enlace de TikTok</h2>
+            <p class="panel-subtitle">
+              Copia el enlace del contenido que quieras guardar y nosotros nos encargamos del resto.
+            </p>
+          </header>
+
+          {% if error %}
+          <div class="alert alert-error" role="alert">
+            {{ error }}
+          </div>
+          {% endif %}
+
+          <form class="download-form" method="GET" action="/">
+            <div class="download-input-group">
+              <label class="input-label" for="url">Enlace del video, fotos o slides</label>
+              <div class="input-row">
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  class="input-control"
+                  placeholder="https://www.tiktok.com/@usuario/video/1234567890"
+                  value="{{ url or '' }}"
+                  required
+                  autocomplete="off"
+                  inputmode="url"
+                />
+                <button
+                  type="button"
+                  id="paste-from-clipboard"
+                  class="btn-ghost btn-clip"
+                  aria-label="Pegar enlace desde el portapapeles"
+                >
+                  Pegar
+                </button>
+              </div>
+            </div>
+
+            <div class="panel-actions">
+              <button type="submit" class="btn-primary">
+                Descargar sin marca de agua
+              </button>
+            </div>
+
+            <p class="panel-hint">
+              No almacenamos tus enlaces. El procesamiento se realiza de forma automatizada.
+            </p>
+          </form>
+        </aside>
+      </div>
+    </section>
 
 
-  {% if error %}
-  <p class="text-center" style="color: rgb(255, 255, 255); margin-top: 16px;">{{ error }}</p>
-  {% endif %}
-
-
-  {% if result %}
-  <div>
-
-    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center py-4">
-
-      <!--VIDEO / FOTOS-->
-      <div class="text-center" style="flex: 1; max-width: 400px; padding: 0px 10px 0px 10px">
+    {% if result %}
+<section class="section section-result" aria-label="Resultado de la descarga">
+  <div class="shell section-inner result-shell">
+    <div class="result-grid">
+      <div class="media">
         {% if result.video %}
-        <div>
-<video autoplay muted playsinline controls loop preload="metadata"
-  style="width: 90%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-  <source src="/video_proxy?video_url={{ result.video | urlencode }}" type="video/mp4">
-  Tu navegador no soporta el video.
-</video>
-
-
+        <div class="media-video-wrap">
+          <video
+            class="media-video"
+            autoplay
+            muted
+            playsinline
+            loop
+            controls
+            preload="metadata"
+          >
+            <source src="/video_proxy?video_url={{ result.video | urlencode }}" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
         </div>
         {% elif result.images %}
         <h4 class="mt-4">Descargar Fotos:</h4>
         <div class="row justify-content-center">
           {% for img in result.images %}
           <div class="col-6 col-md-4 col-lg-4 mb-3">
-            <img src="{{ img }}" alt="Foto {{ loop.index }}" class="img-fluid rounded shadow-sm mb-2">
-            <a href="{{ img }}" class="volver2 mx-auto d-block fw-bold" download="foto_tiktok_{{ loop.index }}.pg">📷
-              {{ loop.index }}</a>
+            <img
+              src="/image_proxy?image_url={{ img | urlencode }}"
+              alt="Foto {{ loop.index }}"
+              class="img-fluid rounded shadow-sm mb-2"
+              loading="lazy"
+            >
+            <a
+              href="/image_proxy?image_url={{ img | urlencode }}"
+              class="volver2 mx-auto d-block fw-bold"
+              download="foto_tiktok_{{ loop.index }}.jpg"
+            >
+              📷 {{ loop.index }}
+            </a>
           </div>
           {% endfor %}
         </div>
         {% endif %}
       </div>
 
-      <!-- PERFIL + BOTONES -->
-      <div class="container-media text-center" style="flex: 1; max-width: 400px;">
-        <div class="author d-flex align-items-start gap-1 mb-2" style="padding: 0px 20px;">
-          <img class="avatar" src="{{ result.avatar }}" alt="avatar" loading="lazy"
-            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          <div class="userinfo text-start">
-            <div class="username fw-bold  fs-5" style="color: #121212dd;">@{{ result.nickname }}</div>
-            <div class="desc ellipsis-1 fw-bold" style="color: #141414bd; font-size: 15px;">{{ result.desc }}...</div>
+      <aside class="result-side">
+        <header class="creator">
+          {% if result.avatar %}
+          <div class="creator-avatar-wrap">
+            <img
+              src="{{ result.avatar }}"
+              alt="Foto de perfil de {{ result.nickname }}"
+              class="creator-avatar"
+              loading="lazy"
+            />
           </div>
+          {% endif %}
+          <div class="creator-meta">
+            <div class="creator-handle">@{{ result.nickname }}</div>
+            {% if result.desc %}
+            <p class="creator-desc">{{ result.desc }}</p>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="result-actions">
+          {% if result.video %}
+          <a
+            href="{{ result.video }}"
+            download="tiktok_sin_marca_de_agua.mp4"
+            class="btn-primary btn-full"
+          >
+            🎬 Descargar video (MP4)
+          </a>
+          {% endif %}
+
+          {% if result.music %}
+          <a href="{{ result.music }}" class="btn-ghost btn-full">
+            🎵 Descargar solo audio (MP3)
+          </a>
+          {% endif %}
+
+          <a href="/" class="btn-ghost btn-full btn-light">
+            🔁 Procesar otro enlace
+          </a>
         </div>
 
-
-        {% if result.video %}
-        <a class="volver mt-2 mx-auto d-block fw-bold" href="{{ result.video }}" download="video_tiktok.mp4">🎬
-          Descargar Video</a>
-        {% endif %}
-        {% if result.music %}
-        <a class="volver mt-2 mx-auto d-block fw-bold" href="{{ result.music }}">🎵 Descargar MP3</a>
-        {% endif %}
-        <a class="volver mt-2 mx-auto d-block fw-bold" href="/">🔙 Volver</a>
-
-      </div>
-
+        <div class="result-note">
+          <p>
+            Usa esta herramienta únicamente con contenido propio o con permiso del creador original.
+            Respeta siempre los derechos de autor y las condiciones de uso de TikTok.
+          </p>
+        </div>
+      </aside>
     </div>
-
-    {% endif %}
   </div>
+</section>
+{% endif %}
 
 
-  <div class="info3" style="text-align: start;">
-    <section class="container bg-white" style="box-shadow: none; ">
-      <h2 class=" fw-bold degradado-titulo text-dark mb-4">¿Cómo descargar videos de TikTok sin marca de agua?</h2>
-      <ol class="list-unstyled">
 
-        <li class="d-flex mb-3">
-          <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle"
-            style="width: 32px; height: 32px; color: #ff6a88">1</div>
-          <p class="mb-0 ms-3">
-            <strong>Encuentra tu video deseado:</strong> Abre la aplicación de TikTok y navega hasta el video que deseas
-            descargar. Asegúrate de que sea el video correcto reproduciéndolo antes de continuar.
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="shell section-inner">
+        <header class="section-header">
+          <h2 class="section-title">Cómo usar SSSTikVid para descargar videos de TikTok</h2>
+          <p class="section-subtitle">
+            El flujo está pensado para ser directo: copiar, pegar y descargar. Sin pasos extra ni configuraciones
+            complicadas.
           </p>
-        </li>
+        </header>
 
-        <li class="d-flex mb-3">
-          <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle"
-            style="width: 32px; height: 32px; color: #ff6a88">2</div>
-          <p class="mb-0 ms-3">
-            <strong>Copia el enlace del video:</strong> Toca el botón de compartir (ícono de flecha) en el lado derecho
-            de la pantalla y selecciona <em>copiar enlace</em>. Verifica que el enlace se haya guardado correctamente en
-            tu portapapeles.
-          </p>
-        </li>
+        <div class="steps-grid">
+          <article class="step-item">
+            <h3 class="step-title">1. Copia el enlace del TikTok</h3>
+            <p class="step-text">
+              Abre la app o web de TikTok, ve al video, fotos o slides que quieras descargar
+              y toca en <strong>Compartir → Copiar enlace</strong>.
+            </p>
+          </article>
 
-        <li class="d-flex mb-3">
-          <div class="d-flex align-items-center justify-content-center bg-light fw-bold rounded-circle"
-            style="width: 32px; height: 32px; color: #ff6a88">3</div>
-          <p class="mb-0 ms-3">
-            <strong>Elige y descarga:</strong> Abre <strong>SSSTikVid</strong> en tu navegador, pega el enlace en el
-            cuadro de texto y haz clic en descargar. Luego podrás seleccionar entre descargar el video sin marca de agua
-            o únicamente el audio.
-          </p>
-        </li>
+          <article class="step-item">
+            <h3 class="step-title">2. Pega el enlace en SSSTikVid</h3>
+            <p class="step-text">
+              Vuelve a <strong>ssstikvid.com</strong>, pega el enlace en el cuadro principal
+              o usa el botón <strong>“Pegar”</strong> para traerlo desde el portapapeles.
+            </p>
+          </article>
 
-      </ol>
+          <article class="step-item">
+            <h3 class="step-title">3. Detectamos el tipo de contenido</h3>
+            <p class="step-text">
+              El sistema identifica si se trata de un video clásico, una galería de fotos o una presentación
+              y prepara las opciones de descarga adecuadas.
+            </p>
+          </article>
+
+          <article class="step-item">
+            <h3 class="step-title">4. Descarga en MP4 o solo audio</h3>
+            <p class="step-text">
+              Elige descargar el <strong>video sin marca de agua en MP4</strong> o solo el
+              <strong>audio en MP3</strong>. Guarda el archivo en tu dispositivo y úsalo según tus permisos de uso.
+            </p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="container bg-white" style="box-shadow: none; ">
-      <h2 class="mb-3 fw-bold">¿Qué es SSSTikVid?</h2>
-      <p class="mb-0 ms-3">
-        <strong>SSSTikVid</strong> es una herramienta rápida y sencilla para descargar videos de <strong>TikTok</strong>
-        sin marca de agua. Compatible con calidad HD y disponible en todos los dispositivos: <strong>Android</strong>,
-        <strong></strong>iOS</strong>, <strong>PC</strong> o <strong>Mac</strong>. Sin complicaciones ni registros, solo
-        pega el enlace y descarga tu video o fotos al instante.
+    <!-- CARACTERÍSTICAS -->
+    <section class="section section--muted" id="caracteristicas">
+      <div class="shell section-inner">
+        <header class="section-header">
+          <h2 class="section-title">Pensado para creadores, equipos y marcas</h2>
+          <p class="section-subtitle">
+            Un descargador que cuida la experiencia de usuario, la velocidad y la calidad del contenido final.
+          </p>
+        </header>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3 class="feature-title">Diseñado para trabajo diario</h3>
+            <p class="feature-text">
+              Ideal para creadores de contenido, community managers, editores y agencias digitales
+              que reutilizan material de TikTok en diferentes formatos.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-title">Compatible con múltiples dispositivos</h3>
+            <p class="feature-text">
+              Al ser una aplicación web, funciona igual de bien en <strong>Android</strong>, <strong>iOS</strong>,
+              <strong>Windows</strong> y <strong>macOS</strong>.
+              Solo necesitas un navegador moderno y conexión a Internet.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-title">Sin instalaciones ni extensiones</h3>
+            <p class="feature-text">
+              No se requieren programas adicionales ni extensiones de navegador.
+              Es una solución ligera, rápida y lista para integrarse en tu flujo de trabajo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="section" id="faq">
+      <div class="shell section-inner">
+        <header class="section-header">
+          <h2 class="section-title">Preguntas frecuentes</h2>
+          <p class="section-subtitle">
+            Algunas dudas habituales sobre el uso de SSSTikVid y el tipo de contenido que puedes descargar.
+          </p>
+        </header>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">
+              ¿SSSTikVid es gratuito o tiene alguna suscripción?
+            </summary>
+            <div class="faq-answer">
+              <p>
+                SSSTikVid es una herramienta online gratuita. No necesitas registrarte,
+                iniciar sesión ni pagar suscripciones para descargar videos o fotos desde TikTok.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              ¿Puedo usar SSSTikVid desde el móvil?
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Sí. SSSTikVid está optimizado para usar desde navegadores móviles en
+                <strong>Android</strong> y <strong>iPhone</strong>. También funciona correctamente en tablets,
+                laptops y equipos de escritorio.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              ¿Qué calidad de video puedo descargar?
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Siempre que TikTok ofrezca el contenido en alta resolución, SSSTikVid intenta conservar
+                esa calidad en el archivo final. La calidad máxima disponible depende del video original.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              ¿Puedo descargar solo el audio de un TikTok?
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Cuando la pista de audio está disponible, verás una opción para descargar solo el audio.
+                Es útil para guardar sonidos virales, canciones o clips de voz para usarlos después.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              ¿Es legal descargar videos de TikTok con SSSTikVid?
+            </summary>
+            <div class="faq-answer">
+              <p>
+                La disponibilidad técnica no implica permisos legales. Debes usar SSSTikVid únicamente con
+                contenido propio o con autorización del creador original, respetando derechos de autor
+                y las condiciones de uso de TikTok.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p class="footer-text">
+        © 2025 SSSTikVid. No estamos afiliados, asociados ni patrocinados por TikTok o ByteDance.
       </p>
-
-    </section>
-
-  </div>
-
-  <footer class="text-white text-center py-3">
-    <div class="container" style="background-color: transparent; box-shadow: none; ">
-      <p class="mb-1" style="font-size: 18px;">Copyright © 2025 SSSTikVid. <br> No estamos afiliados a TikTok.</p>
-      <small>Powered by <a href="https://x.com/persaqe" target="_blank"
-          class="text-decoration-none text-dark doria">doria</a> & <a href="https://x.com/killerjhsk" target="_blank"
-          class="text-decoration-none text-dark anggie">Anggie</a></small>
+      <p class="footer-text footer-text--small">
+        Desarrollado por
+        <a href="https://x.com/sj0847" target="_blank" rel="noreferrer" class="footer-link">
+          doria
+        </a>
+      </p>
     </div>
   </footer>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7KZY0WV2K"></script>
+  <!-- Script UX: botón “Pegar” -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    (function () {
+      const btn = document.getElementById('paste-from-clipboard');
+      const input = document.getElementById('url');
 
-    gtag('config', 'G-W7KZY0WV2K');
+      if (!btn || !input) return;
+
+      if (!navigator.clipboard || !navigator.clipboard.readText) {
+        btn.style.display = 'none';
+        return;
+      }
+
+      btn.addEventListener('click', async function () {
+        try {
+          const text = await navigator.clipboard.readText();
+          if (text) {
+            input.value = text;
+            input.focus();
+          }
+        } catch (e) {
+          console.error('No se pudo leer del portapapeles:', e);
+        }
+      });
+    })();
   </script>
-
 </body>
-
 </html>
